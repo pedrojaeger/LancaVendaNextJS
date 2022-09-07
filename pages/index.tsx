@@ -1,31 +1,17 @@
-import type { NextPage } from 'next'
-import Button from '@mui/material/Button';
-import ResponsiveAppBar from './navbar';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import * as React from 'react';
-
-
-
+import type { NextPage } from "next";
+import * as React from "react";
+import NavBarApp from "./components/navbar";
+import FormsApp from "./components/forms";
+import Layout from "./components/layout";
 
 const Home: NextPage = () => {
   return (
     <>
-    <ResponsiveAppBar />
-    <React.Fragment>
-    
-    <Container className='box' maxWidth="sm">
-      <Box className='box' sx={{ bgcolor: '#cfe8fc', height: '80vh'}} >
-      <h1>
-        asdasd
-      </h1>
-      </Box>
-    </Container>
-    </React.Fragment>
-    
+      <Layout>
+        <FormsApp />
+      </Layout>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
