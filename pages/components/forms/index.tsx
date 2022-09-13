@@ -10,9 +10,9 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-const FormsApp = () => {
-  const vendas: any[] = [];
+const vendas: any[] = [];
 
+const FormsApp = () => {
   const [FormaDePagamento, setFormaDePagamento] = useState("");
 
   const onChangeFormaDePagamento = (event: SelectChangeEvent) => {
@@ -22,15 +22,7 @@ const FormsApp = () => {
   const [cliente, setCliente] = useState("");
   const [valor, setValor] = useState("");
 
-  const lancarVenda = () => {
-    console.log("pagamento lançado");
-    console.log(cliente);
-    console.log(valor);
-    console.log(FormaDePagamento);
-    let venda = { cliente, valor, FormaDePagamento };
-    vendas.push(venda);
-    console.log(vendas);
-  };
+  const venda = { cliente, valor, FormaDePagamento };
 
   const onChangeNome = (evt: SelectChangeEvent) => {
     setCliente(evt.target.value as string);
@@ -40,6 +32,15 @@ const FormsApp = () => {
   };
   const onChangePagamento = (evt: any) => {
     setValor(evt.target.value);
+  };
+
+  const lancarVenda = () => {
+    console.log("pagamento lançado");
+    console.log(cliente);
+    console.log(valor);
+    console.log(FormaDePagamento);
+    vendas.push(...[venda]);
+    console.log(vendas);
   };
 
   return (
